@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #b0796d;
+        }
+
+        form {
+            width: 400px;
+            background-color: rgba(255, 255, 255, 0.66);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px
+            rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 0;
+        }
+
+        legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea,
+        input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="radio"] {
+            margin-left: 20px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @media (min-width: 300px) and (max-width: 1000px) {
+
+            form{
+                margin:30% auto;
+                scale:180%;
+            }
+        }
+    </style>
+</head>
+<body>
+<form action="/assign" method="post">
+    <fieldset>
+        <legend>
+            Fill the information for New Faculty
+        </legend>
+        <label>Enter Faculty name</label>
+        <input type="text" name="assignedFaculty" />
+        <label>Enter email</label>
+        <input type="email"
+               name="facultyMail"/>
+        <label>Enter the course name</label>
+        <input
+                type="text"
+                name="courseName"/>
+        <label>Enter the Course Code</label>
+        <input
+                type="text"
+                name="courseCode"/>
+        <input type="file" name="file" hidden>
+        </textarea>
+        <input type="submit"
+               value="submit"/>
+    </fieldset>
+</form>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/css/HODadmin.css">
+</head>
+<body>
+
+<!--<a href="/myprofile">MY PROFILE</a>-->
+
+<!--<a href="/logout">LOGOUT</a>-->
+
+<h2>Faculty Submission Status</h2>
+
+<!-- Search box -->
+<center>
+<form id="searchForm">
+    <label for="search">Search:</label>
+    <input type="text" id="search" name="search" placeholder="search with the value of any of the column">
+    <button type="button" id="button" onclick="searchdata()" >Search</button>
+    <br><br>
+</form>
+</center>
+<table id="table">
+    <thead>
+    <tr>
+        <th> Course Name</th>
+        <th>Faculty Email</th>
+        <th>Course Code</th>
+        <th>Assigned Faculty</th>
+        <th>Status</th>
+        <th>Download File</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody id="userTableBody">
+    {{#if qus}}
+        {{#each qus}}
+            <tr>
+                <form action="/update" method="post">
+                    <input name="id" hidden type="text"  value="{{this._id}}">
+                    <td><input name="courseName" class="enter" type="text" value="{{this.courseName}}"></td>
+                    <td><input name="facultyMail" class="enter" type="text" value="{{this.facultyMail}}"></td>
+                    <td><input name="courseCode" class="enter" type="text" value="{{this.courseCode}}"></td>
+                    <td><input name="assignedFaculty" class="enter" type="text" value="{{this.assignedFaculty}}"></td>
+                    <td><input name="status" class="enter" type="text" value="{{this.Status}}"></td>
+                    <td><a href="uploads/{{this.file}}" download>Download</a></td>
+                    <td><input class="change" type="submit" value="Update"></td>
+                    <td><button class="change" formaction="/delete">delete</button></td>
+                </form>
+            </tr>
+        {{/each}}
+    {{else}}
+        <tr>
+            <td colspan="6">No user data available</td>
+        </tr>
+    {{/if}}
+    </tbody>
+</table>
+
+<script>
+    function searchdata(){
+        const searchQuery = document.getElementById('search').value.toLowerCase();
+        const rows = document.querySelectorAll('#userTableBody tr');
+
+        rows.forEach(row => {
+            let found = false;
+            const cells = row.querySelectorAll('td input'); // Select all input elements within each row
+            cells.forEach(cell => {
+                if (cell.value.toLowerCase().includes(searchQuery)) { // Check input value
+                    found = true;
+                }
+            });
+            if (found) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1 and 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0b4670;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            width: 40%;
+        }
+        .form-container form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgba(249, 249, 249, 0.32);
+        }
+        .form-container h2 {
+            text-align: center;
+            color:white;
+        }
+        .form-container button {
+            font-size: 19px;
+            display: block;
+            margin: 0 auto;
+            padding: 10px 10px;
+            border-radius:10px;
+            background-color: rgba(52,185,21,0.53);
+            color:white;
+        }
+        .form-container button:active{
+            background-color: rgba(208, 150, 62, 0.62);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-container">
+        <h2>Page 1</h2>
+        <form id="page1Form" action="/navigate" method="post">
+            <input type="hidden" name="destination" value="addTeacher.hbs">
+            <button type="submit">Add a new Faculty</button>
+        </form>
+    </div>
+    <div class="form-container">
+        <h2>Page 2</h2>
+        <form id="page2Form" action="/navigate" method="post">
+            <input type="hidden" name="destination" value="HODadmin.hbs">
+            <button type="submit">Go to Admin panel</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+

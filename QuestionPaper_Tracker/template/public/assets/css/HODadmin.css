@@ -1,0 +1,58 @@
+body{
+    background-color: #edf7ff;
+}
+
+
+*{
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+h2{ font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+table {
+    background-color: rgba(255, 255, 255, 0.69);
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+.change{padding:10px 10px;
+    background-color: rgba(204, 204, 204, 0.5);
+    border:0.5px solid;
+    border-radius:5px;
+}
+th {
+    background-color: #8bb3fc;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+#search{ padding: 10px 20px;
+    border-radius:4px;
+width:600px;}
+#search:active{
+    background-color: #e31b1b;
+}
+#button{ border-radius:4px;
+    padding:10px 10px;}
+#button:active{background-color: #4b4b4b;
+    color:#ffffff}
+.enter{
+    padding:10px 20px 10px;
+    border:none;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size:17px;
+}

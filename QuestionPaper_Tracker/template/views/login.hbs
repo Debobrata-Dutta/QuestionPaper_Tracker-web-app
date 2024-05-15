@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body{
+            background-color: #44bb46;
+        }
+        .login-form {
+            width: 400px;
+            height:450px;
+            margin: 10% auto;
+            padding: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.53);
+            /*border: 1px solid rgba(0, 0, 0, 0.74);*/
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 58, 112, 0.94);
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 95%;
+            padding: 10px 10px;
+            margin-bottom: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-form input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .login-form input[type="submit"] {
+            width: 100%;
+            padding: 15px 5px;
+            background-color: rgba(15, 16, 15, 0.87);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size:15px;
+        }
+
+        .login-form input[type="submit"]:active {
+
+            background-color: #5d5d5d;
+        }
+
+        .login-form a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #383838;
+            text-decoration: none;
+        }
+        @media (min-width: 300px) and (max-width: 1000px) {
+
+            .login-form{
+                margin:30% auto;
+                scale:190%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="login-form">
+    <h2>Login</h2>
+    <br>
+    <form action="/login" method="post">
+        <label for="username" class="label">Your Email</label>
+        <input type="text" id="username" name="email" placeholder="Registered Adamas university Mail"required><br>
+        <label for="pass2" class="label">Your Password</label>
+        <input type="password" id="pass2" name="password" placeholder="Registered Password" required><br>
+        <input type="checkbox" id="showpassword" name="showpassword" onclick="myFunction()"><label>Show password</label>
+        <br><br><br>
+        <input type="submit" value="Login">
+    </form>
+</div>
+<script>
+    function myFunction() {
+        var p = document.getElementById("pass2");
+        if (p.type === "password") {
+            p.type = "text";
+        } else {
+            p.type = "password";
+        }
+    }
+</script>
+</body>
+</html>
